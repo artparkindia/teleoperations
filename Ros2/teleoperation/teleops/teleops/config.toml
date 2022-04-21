@@ -1,0 +1,3 @@
+[heartbeat]
+heartbeat_interval=3
+emergency_commands=["0016#0000T@", "0001#0320B@", "0002#REVER@"]

@@ -1,0 +1,29 @@
+[recorder]
+sensors = ["controller"]
+record_path = "./data/"
+
+[heartbeat]
+frequency=0.5 
+timeout=2000
+
+[video]
+udp_port=19789
+bitrate='100000'
+aspect='640x360'
+preset='ultrafast'
+threads=0
+
+[processes]
+send_heartbeat = ["python3", "Remote_Driver/send_heartbeat.py"]
+teleop = ["python3", "Remote_Driver/teleoperator.py"]
+test = ["python3", "Remote_Driver/test_teleoperator.py"]
+listen_heartbeat = ["python3","Onboard_Vehicle/listen_heartbeat.py"]
+move_robot = ["python3", "Onboard_Vehicle/move_vehicle.py"]
+record_data_robot = ["python3","Logging/record_data.py","--remote" ]
+record_data_driver = ["python3", "Logging/record_data.py","--local"]
+driver_input = ["python3", "Configs/generate_driver_settings.py"]
+play_video = ["python3", "Remote_Driver/play_video.py"]
+stream_video = ["./webrtc-streamer"]
+
+robot = ["stream_video","record_data_robot","move_robot"]
+driver = ["record_data_driver","teleop"]

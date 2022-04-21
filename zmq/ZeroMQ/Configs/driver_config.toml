@@ -1,0 +1,14 @@
+[network]
+remote_ip='192.168.1.189'
+msg_port=5555
+sync_port=5556
+
+[peripheral]
+device='joystick'
+
+[video]
+port=19789
+
+[joystick]
+brake_max=6
+throttle_max=8

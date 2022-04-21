@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='css/base.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='libs/bootstrap.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/followme.css')}}">
+        <script src="static/libs/jquery.min.js"></script>
+		<script src="static/libs/eventemitter2.min.js"></script>
+        <script src="static/libs/roslib.min.js"></script>
+        <script src="static/rospub.js" ws={{ws}}></script>
+        <script src="static/emergency_button.js"></script>
+    </head>
+    <body>
+        <div class='container-fluid'>
+            <nav class="navbar navbar-light bg-secondary follow-me-nav" style="display: flex;justify-content: center;">
+				<p class="text-center col-4 follow-me-p" >
+					<a id="drive_link" class="navbar-brand text-warning text-center align-middle nav-bar-font" href="/drive">
+						FOLLOW ME
+					</a>
+				</p>
+				<div id="emergency_stop_div">
+					<button type="button" id="emergency_stop" class="btn btn-md btn-success">START</button>
+				</div>
+			</nav>
+        </div>
+        <script>
+
+            function publish_data(follow_me=false){
+                var msg =  new ROSLIB.Message({
+                    data:follow_me               
+                })
+                followme_pub.publish(msg)
+                return true
+            }
+
+            $("#emergency_stop").click(function(){
+                if(emergency){
+                    button_stop_emergency()
+                }else{
+                    button_start_emergency()
+                }		
+                publish_data(!emergency)
+		
+            })
+        </script>
+    </body>
+</html>

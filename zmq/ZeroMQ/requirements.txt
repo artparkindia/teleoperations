@@ -1,0 +1,5 @@
+toml==0.10.2
+pygame==2.0.1
+pyzmq==19.0.2
+protobuf==3.14.0
+

@@ -1,0 +1,12 @@
+To demonstrate logging functions of ros2
+Copy the folder to your ros2_workspace
+
+--Build package--
+cd ros2_workspace
+colcon build --packages-select logging_test
+source install/setup.bash
+source /opt/ros/galactic/setup.bash
+
+--To execute--
+ros2 run logging_test logger
+ros2 run logging_test test_logger

@@ -1,0 +1,3 @@
+#!/bin/bash
+source environment.sh robot
+exec python3 startup.py --mode "robot"

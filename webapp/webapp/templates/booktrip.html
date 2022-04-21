@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block head %} 
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='css/booktrip.css')}}">
+    <script src="static/rospub.js" ws={{ws}}></script>
+    <script src="static/emergency_button.js"></script>
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='css/drive.css')}}"></link>
+    <title>Autonomy</title>
+{% endblock %}
+{% block postnav %}
+    <div class="mapdestination">
+
+        <div id='map'>
+            <img src="{{url_for('static', filename='images/rbccps.png')}}" class="img-fluid" alt="map">
+        </div>
+        <div class="destination-div" id="destination-div">
+            <select id="destination_select" class="form-select" aria-label="Default select example">
+                <option value=-1 selected>Select Destination</option>
+                {% for loc in location_data %}
+                    <option value={{loc}}>{{loc}}</option>
+                {% endfor %}
+            </select>
+            <button type="button" id="go_button" class="btn btn-sm btn-info">GO</button>
+            <div id="status_div">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <script src="static/booktrip.js" location_data='{{location_data|tojson|safe}}'></script>
+    <script>
+        $('#drive_link').removeClass('highlight-tab')
+		$('#booktrip_link').addClass('highlight-tab')
+    </script>
+{% endblock %}

@@ -1,0 +1,10 @@
+.follow-me-nav{
+    display: flex;
+    justify-content: center;
+}
+.follow-me-p{
+    margin-top:0.5rem
+}
+.follow-me-button{
+    margin-left:-8rem
+}

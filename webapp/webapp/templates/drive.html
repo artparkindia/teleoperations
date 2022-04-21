@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block head %}
+	<script src="static/emergency_button.js"></script>
+	<script src="static/video.js"></script>
+	<script src="static/rospub.js" ws={{ws}}></script>
+	<title>Teledriving</title>
+{% endblock %}
+
+{% block postnav %}
+		<div class="d-flex embed-responsive embed-responsive-16by9 col align-content-center">
+			<video id="video" class="embed-responsive-item video-element"  playsinline autoplay></video>
+		</div>
+		<div class="columnLateralsx">
+			<div class="joystick_class" id="joy1Div"></div>
+		</div>
+{% endblock %}
+	
+{% block body %}
+	<script src="static/joystick_control.js"></script>
+	<script>
+		$("#booktrip_link").click(function(){
+			webRtcServer.disconnect()
+		})
+		$('#drive_link').addClass('highlight-tab')
+		$('#booktrip_link').removeClass('highlight-tab')
+	</script>
+{% endblock %}
+

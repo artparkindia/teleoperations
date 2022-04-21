@@ -1,0 +1,15 @@
+testing=true
+
+[network]
+remote_ip='192.168.1.89'
+msg_port=5555
+sync_port=5556
+timeout=2000
+
+[peripheral]
+serial_port='/dev/ttyACM0'
+baud_rate=115200
+
+[video]
+usb_port='/dev/video2'
+

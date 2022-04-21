@@ -1,0 +1,3 @@
+#!/bin/bash
+source environment.sh driver
+exec python3 startup.py --mode 'driver' 

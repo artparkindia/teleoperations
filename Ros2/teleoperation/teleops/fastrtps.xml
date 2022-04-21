@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dds>
+    <profiles>
+        <participant profile_name="participant_profile" is_default_profile="true">
+            <domainId>0</domainId>
+            <rtps>
+                <name>aplegion</name>
+                <participantID>1</participantID>
+                <builtin>
+                    <initialPeersList>
+                        <locator>
+                            <udpv4>
+                                <port>7414</port>
+                                <address>223.231.174.165</address>
+                            </udpv4>
+                        </locator>
+                        <locator>
+                            <udpv4>
+                                <port>7412</port>
+                                <address>106.51.87.242</address>
+                            </udpv4>
+                        </locator>
+                    </initialPeersList>
+                </builtin>
+            </rtps>
+        </participant>
+    </profiles>
+</dds>

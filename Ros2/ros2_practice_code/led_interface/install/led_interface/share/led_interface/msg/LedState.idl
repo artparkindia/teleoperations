@@ -1,0 +1,13 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from led_interface/msg/LedState.msg
+// generated code does not contain a copyright notice
+
+
+module led_interface {
+  module msg {
+    typedef int16 int16__3[3];
+    struct LedState {
+      int16__3 state;
+    };
+  };
+};

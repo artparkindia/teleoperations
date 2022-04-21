@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='css/base.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='libs/bootstrap.min.css')}}">
+		<script src="static/libs/joy.js"></script>
+		<script type="module" src="static/libs/adapter.min.js"></script>
+		<script type="module" src="static/libs/webrtc-streamer-element.js"></script>
+		<script src="static/libs/jquery.min.js"></script>
+		<script src="static/libs/eventemitter2.min.js"></script>
+		<script src="static/libs/roslib.min.js"></script>
+		{% block head %}{% endblock %}
+
+    </head>
+    <body>
+        <div class='container-fluid'>
+            <nav class="navbar navbar-light bg-secondary">
+				<p class="text-center col-4">
+					<a id="drive_link" class="navbar-brand text-warning text-center align-middle nav-bar-font" href="/drive">
+						DRIVE
+					</a>
+				</p>
+				<div class="vr"></div>
+				<p class="text-center col-4">
+					<a id="booktrip_link" class="navbar-brand text-warning text-center align-middle nav-bar-font" href="/booktrip">
+						BOOK TRIP
+					</a>
+				</p>
+				<div id="emergency_stop_div">
+					<button type="button" id="emergency_stop" class="btn btn-md btn-success">START</button>
+				</div>
+			</nav>
+			{% block postnav %}{% endblock %}
+        </div>
+			{% block body %}{% endblock %}
+    </body>
+</html>

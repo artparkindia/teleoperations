@@ -1,0 +1,8 @@
+/move:
+  ros__parameters:
+    baud_rate: '115200'
+    serial_port: /dev/ttyACM0
+
+/vehicle_controller:
+  ros__parameters:
+    input: joystick

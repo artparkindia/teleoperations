@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package common.schema;
+
+message ControlMessage {
+  double time = 1;
+  uint32 packet_id = 2;
+  repeated string commands = 3;
+  repeated uint32 values = 4;
+}
+
+message Heartbeat{
+  string keepalive = 1;
+}
+
